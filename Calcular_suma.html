@@ -30,6 +30,9 @@
 		.resta{
             background-color: red;
         }
+        .multiplicacion{
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +51,8 @@
                 <input type="text" id="num2">
             </div>
             <input type="button" value="Calcular suma"  onclick="calcularSuma()" class="suma">
-            <input type="button" value="Calcular suma"  onclick="calcularResta()" class="resta">
+            <input type="button" value="Calcular resta"  onclick="calcularResta()" class="resta">
+            <input type="button" value="Calcular Multiplicacion"  onclick="calcularMulti()" class="multiplicacion">
         </form>
 
         <div id="resultado"></div>
@@ -86,6 +90,24 @@ function calcularResta() {
 
         // Mostrar el resultado en el elemento con id "resultado"
         document.getElementById("resultado").innerHTML = "El resultado de la resta es: " + suma;
+    } else {
+        // Mostrar un mensaje de error si los valores no son números
+        document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
+    }
+}
+
+function calcularMulti() {
+    // Obtener los valores de los campos de entrada
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    // Verificar si ambos valores son números
+    if (!isNaN(num1) && !isNaN(num2)) {
+        // Calcular la suma
+        var suma = num1 * num2;
+
+        // Mostrar el resultado en el elemento con id "resultado"
+        document.getElementById("resultado").innerHTML = "El resultado de la multiolicacion es: " + suma;
     } else {
         // Mostrar un mensaje de error si los valores no son números
         document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
